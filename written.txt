@@ -1,10 +1,54 @@
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
+1. An API is a way for softwares to talk to each other. They can
+send data/infor back and forth in a js object called a json package. Each package
+comes with a object ID to be able to refer to that package. A API is restful when 
+it uses HTTP requests to get, update, create, and delete data. 
+
+2. Node.js allows to use JS outside the browser and is a way to run certain computer
+functions. Some functions include a filesystem; reading & writing files locally with JS.
+Coupled with Express, we can create and manage servers. The functionality of node can be
+extended with packages you can install such as mongoose to control/execute database functions
+with mongoDB and jsx-view-engine to render views for an application.
+
+3. Express is a way for us to be able to create servers. There are 3 key abilities that
+Express allows us to use. First, is to be able to define routes of a server/website, where
+depending on the HTTP request being made we can respond differently to those requests. Second,
+is the ability to process those HTTP requests using middleware such as app.use(express.json())
+for APIs or app.use(express.urlencoded({extended: true})) for processing forms on a webpage.
+And third we can use Express to render views for the user using a view engine such as jsx-view-engine.
+These 3 things in conjunction makes Express and Node really useful for builing web servers.
+
+4. Middleware is a way to process, use, and/or manipulate the information in the HTTP requests
+or responses. They can be used to process the info given by a user in a web form with the app.use
+(express.urlencoded({extended: true})) middleware or process the body of a request in a API app.use
+(express.json()) and even manipulate/override the type of HTTP requests not allowed by the browser 
+(browsers can only process GET requests) with the app.use(methodOverride('_method')) middleware.
+
+5. GET is a request to get some information from the backend. Post is a request to be able to create 
+a new item of data in the backend. PUT/PATCH is a request to update an existing item of data in the
+backend. And delete is a request to delete an item of data in the backend. You would use them in the 
+context of a RESTful API to create/manipulate/update data in a database.
+
+6. Parameters in a URL can be used to create different routes that listen for specific or multiple requests
+on the that URL. They can lead to different things happening to data in the database, show something to the
+user or take in information from the parameters in the URL. You can have dynamic parameters too which allow
+for different responses or views based off the parameters in the URL. Examples include '/', in the URL, which
+represents the homepage where all the main information could be shown. '/new' allow to create new data,
+'/:id' is a dynamic route that can show different things based of the id of a data item.
+
+7. Whenever you make an async function that has to wait to do something as its getting info from a different
+website or database it is possible to encounter errors as such you should try to account for or 'catch' those 
+potential errors with a try/catch code block wherein the catch block if a argument of an error pops up, you can 
+handle that accordingly, such as responding with a status code to identify the type of error and the error.message
+to see what is at fault.
+
+8. You should structure a RESTful API with routes that allow the user to Create, Update, Destory items.
+
+9. You first need to be able to read json packages so you must have middleware to do that, use app.use(
+express.json()) to do that. When receiving the body assign a variable to req.body to be able to read that
+data. Example would be to read a specific item you know exists in the request body you can assign req.body.whateverData
+to a variable and see that data. You can also use req.params.id if there is an id that is in the url to look up a specific
+collection of that with.
+
+10. You can download code testing packages in Node.js. 2 libraries include Jest and Supertest which allow you to run tests
+and make HTTP requests to APIs. You can run unit tests to verify small isolated sections of code, integration tests to verify
+if pieces of different code work together properly, and systems test to verify if all the code in the application works together.
